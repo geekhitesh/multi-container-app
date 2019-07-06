@@ -18,7 +18,7 @@ after_success:
   - docker push geekhitesh/multi-nginx
   - docker push geekhitesh/multi-server
   - docker push geekhitesh/multi-worker
-
+##new
 deploy:
   provider: elasticbeanstalk
   region: "south-1"
