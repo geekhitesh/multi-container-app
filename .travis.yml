@@ -18,3 +18,16 @@ after_success:
   - docker push geekhitesh/multi-nginx
   - docker push geekhitesh/multi-server
   - docker push geekhitesh/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: south-1
+  app: multi-docker
+  env: multi-docker-env
+  bucket_name: elasticbeanstalk-ap-south-1-518134791710
+  bucket_path: multi-docker-app
+  on:
+   branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
